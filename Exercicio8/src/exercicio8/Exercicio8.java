@@ -1,21 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package exercicio8;
 
-/**
- *
- * @author aluno.saolucas
- */
+import java.util.ArrayList;
+
+
 public class Exercicio8 {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+
+        ArrayList<Pagamento> pagamentos = new ArrayList<>();
+
+        pagamentos.add(new Pagamento.CartaoCredito(500, "24/03/2026", "Compra online", "1234-5678-9876-5432"));
+        pagamentos.add(new Pagamento.Pix(200, "24/03/2026", "Transferência", "joao@pix.com"));
+        pagamentos.add(new Pagamento.Boleto(300, "24/03/2026", "Mensalidade", "00123456789"));
+        pagamentos.add(new Pagamento.Dinheiro(150, "24/03/2026", "Pagamento à vista"));
+
+        // Testando polimorfismo
+        for (Pagamento p : pagamentos) {
+            p.processarPagamento();
+        }
     }
+} 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
     
-}
